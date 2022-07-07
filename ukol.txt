@@ -1,0 +1,49 @@
+1.) Nainstalujte si Django (ale to už asi máte).
+
+2.) Připravte si nějaký adresář, ve kterém bude nový projekt.
+
+3.) Založte Django projekt "mesta" (nebo si vyberte vlastní téma)
+
+4.) V rámci projektu vytvořte aplikaci "zajimavosti". (Pokud pracujete 
+na vlastním tématu, tak si vymyslete aplikaci podle sebe.)
+
+5.) Napište aspoň tři view funkce. Jedna se bude jmenovat index a bude to
+základní stránka o městech. Jedna se bude jmenovat pocasi a bude zobrazovat
+informace o počasí. Jedna se bude jmenovat doprava a bude zobrazovat
+informace o dopravě. (Všechny tři budou vracet jednoduchou HttpResponse 
+s jednoduchým textem.)
+
+6.) V souboru urls.py ve vaší aplikaci udělete směrovač (router) 
+pro tyhle view funkce. (Vyberte pro ně vhodné url.)
+
+7.) Dodělejte router i v hlavním souboru v rámci projektu, aby vaši aplikaci
+našel a mohl zobrazit.
+
+8.) Stránky si vyzkoušejte, zobrazte si informace o městech i o počasí a dopravě.
+
+9.) Vytvořte si (v souboru views.py v aplikaci zajimavosti) slovník, kde klíče budou města a
+hodnoty budou nějaké zajímavosti z daného města (nemusíte googlit, klidně si
+vymyslete nějaké fiktivní informace).
+
+10.) Do souboru urls.py v aplikaci přidejte další položku - bude to adresa, jejíž poslední segment
+bude dynamický a bude to jméno města. 
+
+11.) Napište k této položce odpovídající view funkci. View funkce zobrazí jméno města a zajímavost 
+o něm.
+
+12.) Vyzkoušejte si zobrazit zajímavosti o vašich městech.
+
+13.) Co když zadáte do URL adresy neexistující město? View funkce by na to měla reagovat a 
+zobrazit stránku 404 Not Found. Dopište kód, který to zařídí.
+
+14.) Udělejte si v souboru urls.py v aplikaci ještě jednu cestu (třeba seznam) a odpovídající
+view funkci. View funkce by měla zobrazovat seznam všech měst.
+
+15.) Vše si proklikejte, vyzkoušejte, že to funguje, a užijte si to.
+
+Odkazy:
+Tutoriál v Django dokumentaci:
+https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+
+Rozjetí projektu podle real pythonu:
+https://realpython.com/django-setup/
