@@ -1,5 +1,5 @@
-1.) Pojďme začít používat modely. Vytvořtře model Mesto. Město bude mít jméno (textové pole), země, ve které se nachází (opět text),
-zajímavost (textové pole s delším textem) a počet obyvatel (číslo). Můžete přidat nějakou boolean vlastnost 
+1.) Pojďme začít používat modely. Vytvořtře model Mesto. Město bude mít jméno (textové pole), země, ve které se nachází 
+(opět text), zajímavost (textové pole s delším textem) a počet obyvatel (číslo). Můžete přidat nějakou boolean vlastnost 
 (což jsme nedělali v hodině, ale zjistěte si z dokumentace, jak se to dělá).
 
 2.) Zařiďte, aby se databáze dozvěděla o Vašem modelu a vytvořila odpovídající tabulku.

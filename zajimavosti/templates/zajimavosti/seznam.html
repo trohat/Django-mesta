@@ -5,8 +5,8 @@
 {% block content %}
     <h1>Seznam všech měst</h1>
     <ol>
-        {% for mesto, popis in mesta.items %}
-            <li><a href="{% url 'detail' mesto %}">{{ mesto|lower|capfirst }}</a> - {{ popis }}</li>
+        {% for mesto in mesta %}
+            <li><a href="{% url mesto.get_absolute_url %}">{{ mesto.jmeno|lower|capfirst }}</a> - {{ mesto.zajimavost }}</li>
         {% endfor %}
     </ol>
 {% endblock content %}

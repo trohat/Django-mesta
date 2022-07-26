@@ -1,5 +1,7 @@
-from django.http import Http404, HttpResponse
+from django.http import Http404
 from django.shortcuts import render
+
+from .models import Mesto
 
 # Create your views here.
 # tohle jsou view funkce
@@ -35,17 +37,18 @@ def doprava(request):
     return render(request, "zajimavosti/doprava.html", context)
 
 def detail(request, mesto):
-    mesto = mesto.lower().capitalize()
-    if mesto in mesta.keys():
-        info = mesta[mesto]
+    jmeno = mesto.lower().capitalize()
+    try:
+        mesto = Mesto.objects.get(jmeno=jmeno)
         return render(request, "zajimavosti/detail.html", {
-            "mesto": mesto,
-            "popis": info
+            "mesto": mesto.jmeno,
+            "popis": mesto.zajimavost
         })
-    else:
+    except:
         raise Http404("Dané město v naší aplikaci neexistuje.")
 
 def seznam(request):
+    mesta = Mesto.objects.all().order_by("-jmeno")
     return render(request, "zajimavosti/seznam.html", {
         "mesta": mesta
     })
