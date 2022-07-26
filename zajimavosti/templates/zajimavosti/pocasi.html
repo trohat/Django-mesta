@@ -1,0 +1,10 @@
+{% extends 'zajimavosti/base.html' %}
+
+{% block title %}Počasí{% endblock title %}
+
+{% block content %}
+    <p>Dnes je {{ slovni_popis|upper }}.</p>
+    <p>Síla větru je: {{ sila_vetru|add:"2" }}.</p>
+    <p>Množství srážek je: {{ srazky }}.</p>
+    <p>Sinice ve vodě {{ sinice_ve_vode|yesno:"jsou,nejsou" }}.</p>
+{% endblock content %}

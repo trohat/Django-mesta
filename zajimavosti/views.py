@@ -8,32 +8,44 @@ mesta = {
     "Praha": "V Praze jsou Hradčany.",
     "Brno": "V Brně je Bar, který neexistuje.",
     "Ostrava": "V Ostravě je Stodolní.",
-    "Liberec": "Liberec má hezkou zoo.y"
+    "Liberec": "Liberec má hezkou zoo."
 }
 
 def index(request):
-    return HttpResponse("<h1>Tohle je hlavní stránky projektu.</h1>")
+    return render(request, "zajimavosti/index.html", {
+        "mesta": mesta.keys()
+    })
 
 def pocasi(request):
-    return HttpResponse("<p>Dnes bude hezky.</p>")
+    slovni_popis = "slunečno"
+    vitr = 5
+    dest = 1.0
+    return render(request, "zajimavosti/pocasi.html", {
+        "slovni_popis": slovni_popis,
+        "sila_vetru": vitr,
+        "srazky": dest,
+        "sinice_ve_vode": False
+    })
 
 def doprava(request):
-    return HttpResponse("<p>Všechny ulice jsou prázdné, všichni jsou u vody.</p>")
+    prujezdnost = False
+    context =  {
+        "prujezdnost": prujezdnost
+    }
+    return render(request, "zajimavosti/doprava.html", context)
 
 def detail(request, mesto):
     mesto = mesto.lower().capitalize()
     if mesto in mesta.keys():
         info = mesta[mesto]
-        response = f"<p>Tohle jsou informace o městě {mesto}.</p>"
-        response += f"<p>{info}</p>"
-        return HttpResponse(response)
+        return render(request, "zajimavosti/detail.html", {
+            "mesto": mesto,
+            "popis": info
+        })
     else:
         raise Http404("Dané město v naší aplikaci neexistuje.")
 
 def seznam(request):
-    response = "<h1>Seznam všech měst</h1>"
-    response += "<ul>"
-    for mesto in mesta:
-        response += f"<li>{mesto}</li>"
-    response += "</ul>"
-    return HttpResponse(response)
+    return render(request, "zajimavosti/seznam.html", {
+        "mesta": mesta
+    })

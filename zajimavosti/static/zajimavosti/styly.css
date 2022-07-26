@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    background-color: darkgoldenrod;
+    border: 2px dashed red;
+}
+
+header > div {
+    padding: 20px;
+}
+
+header > div:hover {
+    background-color: aliceblue;
+}
+
+header > div > a {
+    text-decoration: none;
+}

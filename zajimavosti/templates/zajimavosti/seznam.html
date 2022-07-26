@@ -1,0 +1,12 @@
+{% extends 'zajimavosti/base.html' %}
+
+{% block title %}Seznam měst{% endblock title %}
+
+{% block content %}
+    <h1>Seznam všech měst</h1>
+    <ol>
+        {% for mesto, popis in mesta.items %}
+            <li><a href="{% url 'detail' mesto %}">{{ mesto|lower|capfirst }}</a> - {{ popis }}</li>
+        {% endfor %}
+    </ol>
+{% endblock content %}

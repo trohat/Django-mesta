@@ -1,0 +1,14 @@
+{% extends 'zajimavosti/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'zajimavosti/detail.css' %}">
+{% endblock css %}
+
+{% block title %}Detail města{% endblock title %}
+
+{% block content %}
+    <h1>Informace o městě {{ mesto |upper }}:</h1>
+    <p>{{ popis }}</p>
+    <p><a href="{% url 'seznam' %}">Seznam všech měst</a></p>
+{% endblock content %}

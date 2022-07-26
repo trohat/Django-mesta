@@ -1,0 +1,13 @@
+{% extends 'zajimavosti/base.html' %}
+
+{% block title %}Úvodní stránka{% endblock title %}
+
+{% block content %}
+    <h1>Tohle je úvodní stránka naší nejlepší aplikace.</h1>
+    <h2>Seznam měst je zde:</h2>
+    <ul>
+        {% for mesto in mesta %}
+            <li>{{ forloop.counter }}. {{ mesto }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

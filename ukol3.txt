@@ -1,0 +1,41 @@
+1.) Pojďme začít používat modely. Vytvořtře model Mesto. Město bude mít jméno (textové pole), země, ve které se nachází (opět text),
+zajímavost (textové pole s delším textem) a počet obyvatel (číslo). Můžete přidat nějakou boolean vlastnost 
+(což jsme nedělali v hodině, ale zjistěte si z dokumentace, jak se to dělá).
+
+2.) Zařiďte, aby se databáze dozvěděla o Vašem modelu a vytvořila odpovídající tabulku.
+
+3.) Spusťe si shell a pomocí příkazové řádky vytvořte pár měst. Aspoň dvě města budou ve stejné zemi. 
+(Údaje nemusíte googlit, klidně si vymyslete fiktivní města a sami si vymyslete zajímavosti a počet obvytel.)
+
+4.) Pošlete do datábaze pár dotazů:
+a) Jak vyberete z tabulky všechna města?
+
+b) Jak vyberete všechna města z konkrétní země? (Zkuste použít tu zemi, která má více než jedno město.)
+
+c) Jak vyberete město s ID 2?
+
+d) Co lze použít místo ID?
+
+e) Jak vyberete města, která mají uprostřed popisu určitě slovo?
+
+f) Jak vyberete města, která mají na začátku popisu určité slovo?
+
+g) Jak vyberete města, která mají počet obyvatel větší než nějaké konkrétní číslo? (Vyberte číslo rozumně tak, aby se vrátila aspoň dvě 
+města, a zároveň, aby se nevrátila všechna.)
+
+5.) Všechny dotazy z bodu 4 si vyzkoušejte a ověřte, že fungují tak, jak mají. Pokud se města nevypisují hezky, opravte to.
+Jaké datové typy se vrací při odeslání dotazů? 
+
+6.) Pošlete do databáze dotaz na nějaké konkrétní město, změňte jeho popis a znovu ho do databáze uložte.
+
+7.) Dělat vše ručně v shellu je otrava. Pojďme to zkusit adminen. Založte si uživatele pro administrační rozhraní a přihlašte se.
+
+8.) Vidíte v databázi vaši tabulku s městy? Pokud ne, zařiďte, abyste ji viděli.
+
+9.) Pohrajte se s administračním rozhraním a vyzkoušejte, co vše se v něm dá dělat.
+
+Odkazy:
+https://docs.djangoproject.com/en/4.0/intro/tutorial02/
+https://docs.djangoproject.com/en/4.0/topics/db/models/
+https://docs.djangoproject.com/en/4.0/ref/models/fields/
+https://docs.djangoproject.com/en/4.0/topics/db/queries/

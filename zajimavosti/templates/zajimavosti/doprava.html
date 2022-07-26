@@ -1,0 +1,12 @@
+{% extends 'zajimavosti/base.html' %}
+
+{% block title %}Doprava{% endblock title %}
+
+{% block content %}
+<p>Dnes jsou ideální podmínky na cestování.</p>
+    {% if prujezdnost %}
+        <p>Dokonce můžete vyrazit do vašeho oblíbeného města.</p>
+    {% else %}
+        <p>Ale do města raději nejezděte.</p>
+    {% endif %}
+{% endblock content %}

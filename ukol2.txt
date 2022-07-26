@@ -1,0 +1,56 @@
+1.) Pojďme začít používat šablony. Vytvořte si v aplikaci "zajimavosti" podadresář "templates" a v něm 
+podadresář stejného jména, jako je aplikace. V něm založte soubor pocasi.html a vytvořte nějakou základní html stránku.
+
+2.) Ve view funkci pocasi místo používání HttpResponse odkažte na nově vytvořenou šablonu a nechte ji vyrenderovat.
+
+3.) Totéž (nová HTML šablona, upravená view funkce) udělejte i pro podstránku doprava.
+
+4.) Ve view funkci pocasi si připravte tři proměnné (třeba slovní popis počasí, množství srážek a síla větru) a
+pomocí kontextu je pošlete do šablony. V šabloně je zobrazte, a to včetně nějakého slovního popisu, aby to celé dávalo
+smysl.
+
+5.) Použijte nějaké filtry. Zkuste slovní popis zobrazit velkými písmeny. Dále, budeme klamat ohledně síly větru a v šabloně
+zobrazíme vítr o 2 větší než jaký nám přišel v kontextu (zvýšení o dva proveďte pomocí filtru).
+
+6.) Přidejte do kontextu ve view funkci pocasi nějakou boolean proměnnou (třeba bude pršet - ano/ne). Zobrazte v šabloně 
+její obsah pomocí vhodného filtru (nechcete zobrazovat hodnoty True a False, ale nějakou jejich slovní variantu).
+
+7.) Vytvořte nějakou boolean proměnnou i ve view funkci doprava (nepř. průjezdnost ano/ne) a též si ji pošlete do šablony.
+
+8.) V šabloně doprava pomocí podmínky zobrazte informace o průjezdnosti (pokud je průjezdnost True, napište,
+že přejete šťastnou cestu skrz město, pokud je False, napište krátký text o tom, že městu je vhodné se vyhnout).
+
+9.) V souboru views.py si vytvořte slovník o městech a zajímavostech v nich - klíč je jméno města, hodnota je zajímavost.
+(Možná už máte tento slovník vytvořený z minulé sady úkolů, byl to úkol číslo 9.)
+
+10.) Upravte view funkci index, aby též vracela šablonu a vytvořte odpovídající šablonu.
+
+11.) Do šablony index si kontextem pošlete klíče z vytvořeného slovníku jako list. Celý list zobrazte pomocí for značky v šabloně.
+
+12.) Nastudujte si nějaké další filtry a značky z následujícího odkazu a použijte je:
+https://docs.djangoproject.com/en/4.0/ref/templates/builtins/
+
+13.) Z minulého úkolu byste měli mít view funkci seznam (měla by zobrazovat seznam měst). Předělejte ji tak, aby renderovala šablonu 
+a vytvořte odpovídající šablonu.
+
+14.) Předělejte na renderování šablony i view funkci, která zobrazuje zajímavosti o jednom konkrétním městě 
+a opět vytvořte odpovídající šablonu.
+
+15.) Zařiďte, aby se v šabloně seznam dalo prokliknout na detail s údaji o konkrétním městě.
+
+16.) Zařiďte, aby se na stránce s údaji o konkrétním městě dalo prokliknout zpět na seznam všech měst.
+
+---------------------------------------------------------------
+
+17.) Šablony mají spoustu společného kódu. Vytvořte základní (base) šablonu a nechte ostatní šablony od ní dědit.
+
+18.) V základní šabloně přidejte jednoduchou hlavičku a patičku, společnou pro všechny stránky.
+
+19.) Přidejte nějaká CSSka. Propojte je na všechny stránky.
+
+Odkazy:
+Základní stránky o šablonách v dokumentaci:
+https://docs.djangoproject.com/en/4.0/topics/templates/ 
+
+Článek z real pythonu o značkách a filtrech:
+https://realpython.com/django-templates-tags-filters/
