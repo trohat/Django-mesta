@@ -1,0 +1,43 @@
+1.) Vytvořte si projekt v Djangu pro stránky o skautech.
+
+2.) Vytvořte v projektu aplikaci pro evidenci členů - aplikace bude i 
+zobrazovat informace o jednotlivých členech
+
+3.) Vytvořte základní router (směrovač) - v souboru urls.py (společném 
+pro celý projekt) bude odkaz na aplikaci z bodu 2 (s prázdnou cestou,
+abychom ji v prohlížeči nemuseli pořád vyplňovat)
+
+4.) Vytvořte další router přímo v aplikaci - povede na tři typy stránek:
+a) bez cesty (tj. s prázdnou cestou) - úvodní stránka s nějakým úvodním povídáním   "localhost:8000"
+b) obecná cesta, např. "/clenove" - povede na seznam všech členů                    "localhost:8000/clenove"
+c) konkrétní cesta, např. "/clenove/fred" - zobrazí informace o Fredovi             "localhost:8000/clenove/fred"
+
+5.) Pomocí šablon vytvořte jednotlivé stránky (úvodní stránka, seznam členů, detail člena) - 
+krom úvodní stránky budou zatím prázdné (můžete tam dát nějaký univerzální text). Používejte dědičnost šablon 
+- tj. bude nějaká univerzální šablona, ostatní od ní dědí.
+
+6.) Na stránkách o členech není moc co zobrazovat, protože zatím nemáme data, 
+pojďme si je tedy vytvořit: 
+Vytvorte model Clen (nebo Skaut, možná lépe v angličtině) - každý skaut má jméno, skautskou přezdívku, věk a 
+přidejte mu nějakou hodnotu typu boolean dle vašeho výběru.
+
+7.) S pomocí modelu vytvořte odpovídající tabulku v databázi
+
+8.) Spusťe si shell a vytvořte aspoň jednoho skauta ručně. 
+
+9.) Tvoření ručně je příliš pracné, pojďme si pomoci adminem. Vytvořte superusera (zapamatujte si heslo),
+logněte se do adminu a vytvořte další skauty s jeho pomocí.
+
+10.) V šabloně stránky seznam členů vypište všechny členy, stačí jméno nebo skautská přezdívka.
+
+11.) V šabloně stránky detail člena vypište podrobné informace o každém členovi.
+
+12.) Použijte v šablonách aspoň jeden filtr (může být třeba na velká písmena, ale zkuste
+vymyslet i něco zajímvějšího)
+
+13.) Ze stránky seznam členů se dá na každého člena prokliknout (používejte značku url).
+
+14.) Vytvořte menu - může to být samostatná šablona, která se vkládá na všechny stránky. 
+Menu obsahuje odkaz i na úvodní stránku i na seznam členů.
+
+15.) Vytvořte nějaké základní CSS styly (stačí barevné písmo) v samostatném souboru a propojte je do šablon.

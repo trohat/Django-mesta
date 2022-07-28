@@ -5,10 +5,13 @@
 <link rel="stylesheet" href="{% static 'zajimavosti/detail.css' %}">
 {% endblock css %}
 
-{% block title %}Detail města{% endblock title %}
+{% block title %}Detail města {{ mesto.jmeno |upper }}{% endblock title %}
 
 {% block content %}
-    <h1>Informace o městě {{ mesto |upper }}:</h1>
-    <p>{{ popis }}</p>
+    <h1>Informace o městě {{ mesto.jmeno |upper }}:</h1>
+    <p>Leží v zemi {{ mesto.zeme }}.</p>
+    <p>{{ mesto.zajimavost }}</p>
+    <p>Počet obyvatel: {{ mesto.pocet_obyvatel }}</p>
+    <p>Je to hlavní město? {{ mesto.hlavni_mesto|yesno:"Je,Není" }}.</p>
     <p><a href="{% url 'seznam' %}">Seznam všech měst</a></p>
 {% endblock content %}

@@ -15,7 +15,6 @@ class Mesto(models.Model):
 
     def get_absolute_url(self):
         return reverse("detail", args=[self.jmeno])
-    
 
     class Meta:
         verbose_name_plural = "Mesta"

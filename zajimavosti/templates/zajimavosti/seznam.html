@@ -6,7 +6,7 @@
     <h1>Seznam všech měst</h1>
     <ol>
         {% for mesto in mesta %}
-            <li><a href="{% url mesto.get_absolute_url %}">{{ mesto.jmeno|lower|capfirst }}</a> - {{ mesto.zajimavost }}</li>
+            <li><a href="{{ mesto.get_absolute_url }}">{{ mesto.jmeno|lower|capfirst }}</a> - {{ mesto.zajimavost }}</li>
         {% endfor %}
     </ol>
 {% endblock content %}

@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Mesto
 
@@ -14,8 +14,9 @@ mesta = {
 }
 
 def index(request):
+    mesta = Mesto.objects.all().order_by("-pocet_obyvatel")
     return render(request, "zajimavosti/index.html", {
-        "mesta": mesta.keys()
+        "mesta": mesta
     })
 
 def pocasi(request):
@@ -37,15 +38,15 @@ def doprava(request):
     return render(request, "zajimavosti/doprava.html", context)
 
 def detail(request, mesto):
-    jmeno = mesto.lower().capitalize()
     try:
-        mesto = Mesto.objects.get(jmeno=jmeno)
-        return render(request, "zajimavosti/detail.html", {
-            "mesto": mesto.jmeno,
-            "popis": mesto.zajimavost
-        })
-    except:
+        mesto = Mesto.objects.get(jmeno=mesto)
+    except Mesto.DoesNotExist:
         raise Http404("Dané město v naší aplikaci neexistuje.")
+    # mesto = get_object_or_404(Mesto, jmeno=mesto)
+    return render(request, "zajimavosti/detail.html", {
+        "mesto": mesto,
+     })
+    
 
 def seznam(request):
     mesta = Mesto.objects.all().order_by("-jmeno")
