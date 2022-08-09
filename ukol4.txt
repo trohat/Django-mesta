@@ -1,0 +1,28 @@
+1.) V rámci projektu města vytvořte novou stránku, na které bude formulář
+pro přidání nového města (jméno stránky si vymyslete)
+
+2.) Stránku propojte do aplikace (pokud již nemáte, tak udělejte view funkci, šablonu, dále
+přidělejte cestu do routeru a také link do menu)
+
+3.) Vytvořte formulář, který se bude na stránce zobrazovat.
+
+4.) Zobrazte formulář na stránce. Můžete zkusit různé způsoby - zobrazit ho jen tak, jako seznam,
+jako tabulku, nebo si pohrát s jednotlivými políčky.
+
+5.) Napište odpovídající view funkci, která bude řešit různé scénáře:
+a) na stránce jste poprvé, a zobrazuje se prázdný formulář
+b) formulář jste odeslali, ale obsahuje chyby - zobrazí se tedy znovu, ale nezapomene údaje
+vyplněné při minulém odeslání
+c) formulář jste odeslali a je v pořádku - město se uloží do databáze
+
+6.) Po úspěšném odeslání formuláře by mělo dojít k přesměrování na stránku zobrazující oznámení 
+o tom, že kniha byla úspěšně uložena do databáze (plus případně nějaké poděkování). Vytvořte tuhle stránku
+a propojte ji routerem. Dodělejte přesměrování.
+
+7.) Aplikace by měla být funkční. Vyzkoušejte ji a vyzkoušejte všechny tři scénáře z bodu 6. (Pro práci se špatně vyplněnými
+poli budete muset obejít validaci na straně prohlížeče - dělá se pomocí DevTools)
+
+8.) Zkuste místo Form použít ModelForm (můžete přidat novou stránku, nebo upravit stávající). Nezapomeňte přidělat
+nebo upravit view funkci.
+
+9.) Co se vám líbí více, formy nebo modelformy?
