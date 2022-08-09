@@ -1,7 +1,8 @@
 from django.http import Http404
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 from .models import Mesto
+from .forms import MestoForm, MestoModelForm
 
 # Create your views here.
 # tohle jsou view funkce
@@ -49,7 +50,42 @@ def detail(request, mesto):
     
 
 def seznam(request):
-    mesta = Mesto.objects.all().order_by("-jmeno")
+    mesta = Mesto.objects.all().order_by("jmeno")
     return render(request, "zajimavosti/seznam.html", {
         "mesta": mesta
     })
+
+def pridat1(request):
+    if request.method == "POST":
+        form = MestoForm(request.POST)
+        if form.is_valid():
+            mesto = Mesto(
+                jmeno=form.cleaned_data["jmeno"],
+                zeme=form.cleaned_data["zeme"],
+                zajimavost=form.cleaned_data["zajimavost"],
+                pocet_obyvatel=form.cleaned_data["pocet_obyvatel"],
+                hlavni_mesto=form.cleaned_data["hlavni_mesto"],
+            )
+            mesto.save()
+            return redirect("dekuji")
+    else:
+        form = MestoForm()
+    return render(request, "zajimavosti/pridat1.html", {
+        "form": form
+    })
+
+def pridat2(request):
+    if request.method == "POST":
+        form = MestoModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("dekuji")
+    else:
+        form = MestoModelForm()
+    return render(request, "zajimavosti/pridat2.html", {
+        "form": form
+    })
+
+def dekuji(request):
+    return render(request, "zajimavosti/dekuji.html")
+
